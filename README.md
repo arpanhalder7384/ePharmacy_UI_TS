@@ -1,54 +1,76 @@
-# React + TypeScript + Vite
+# ePharmacy_UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🏥 About the Project
+**ePharmacy_UI** This is the redesigned frontend of the **ePharmacy** platform built with **React + TypeScript**, featuring a clean UI/UX and seamless integration with multiple backend microservices (User, Medicine, Cart, Order, and Payment services).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- 🔐 **Authentication** (Login/Signup)
+- 📦 **Medicine Listing** (Allopathy, Homeopathy, Search, Filter)
+- 🛒 **Cart Management**
+- 💳 **Checkout Process** (Address + Payment Stepper)
+- 🧾 **Order History**
+- 💳 **Saved Cards and CVV Validation**
+- 🔁 **Password Change**
+- 📱 **Responsive Design using MUI + Tailwind CSS**
+- 🔧 **API integration with Consul-discovered backend services**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ⚙️ Tech Stack
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+| Tech             | Description                         |
+|------------------|-------------------------------------|
+| React + Vite     | Fast frontend with modular setup    |
+| TypeScript       | Type safety and better tooling      |
+| Tailwind CSS     | Utility-first styling               |
+| Material UI (MUI)| Pre-built React components          |
+| Axios            | HTTP client for APIs                |
+| React Router     | Routing between pages               |
+| Toastify         | User-friendly toast messages        |
+
+
+## ⚡ Installation & Setup
+### 1️⃣ Clone the Repository
+```sh
+git clone https://github.com/arpanhalder7384/ePharmacy_UI_TS.git
+cd ePharmacy_UI_TS
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### 2️⃣ Install Dependencies
+```sh
+npm install
 ```
+
+### 3️⃣ Run the Project
+```sh
+npm run dev
+```
+
+The app will run on `http://localhost:5173`.
+
+## 📌 Project Structure
+```
+📦 ePharmacy_UI
+App.tsx             # Main app entry
+src/
+├── components/         # Reusable UI components
+├── pages/              # Route-based pages (Home, Cart, Checkout, etc.)
+├── services/           # Axios API service layers
+├── utils/              # Helper functions and constants
+├── assets/             # Images and static content
+
+```
+
+## 🤝 Contributing
+Feel free to contribute! Fork the repository, make changes, and submit a pull request.
+
+## 📜 License
+This project is open-source and free to use.
+
+---
+### 📩 Contact
+For any queries or contributions, reach out at `arpanhalder7384@gmail.com`.
+
+Happy Coding! 🚀
+
