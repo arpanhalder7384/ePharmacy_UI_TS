@@ -51,7 +51,6 @@ function App() {
   return (
     <>
       <CartProvider>
-
         <RouterProvider router={router}></RouterProvider>
       </CartProvider>
     </>

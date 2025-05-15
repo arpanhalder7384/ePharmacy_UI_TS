@@ -2,7 +2,15 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 // import { useCart } from "@/contexts/CartContext";
 import { Button } from "./ui/button";
-import { Input } from "./ui/input"
+import { Input } from "./ui/input";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu"
 
 import {
   ShoppingCart,
@@ -38,12 +46,12 @@ const Header = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
               <PillBottle className="text-primary h-7 w-7 mr-2" />
-              <span className="text-primary text-2xl font-serif font-bold">MediShop</span>
+              <span className="text-primary text-xl font-serif font-bold">E-Pharmacy</span>
             </Link>
           </div>
 
           {/* Search - Desktop */}
-          <div className="hidden md:flex flex-1 mx-8">
+          {/* <div className="hidden md:flex flex-1 mx-8">
             <form onSubmit={handleSearch} className="relative w-full">
               <Input
                 type="text"
@@ -60,7 +68,7 @@ const Header = () => {
                 <Search />
               </Button>
             </form>
-          </div>
+          </div> */}
 
           {/* Navigation - Desktop */}
           <nav className="hidden md:flex items-center space-x-6">
@@ -93,7 +101,7 @@ const Header = () => {
           {/* User Menu & Cart */}
           <div className="flex items-center space-x-4">
             <Link to="/cart" className="relative p-2 text-gray-600 hover:text-primary transition duration-150">
-              <ShoppingCart className="h-6 w-6" />
+              <ShoppingCart className="h-6 w-6 ml-10" />
               {/* {itemCount > 0 && (
                 <span className="absolute -top-1 -right-1 bg-destructive text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
                   {itemCount}
@@ -101,7 +109,18 @@ const Header = () => {
               )} */}
             </Link>
             <Button variant="ghost" size="icon" className="p-2 text-gray-600 hover:text-primary transition duration-150">
-              <User className="h-6 w-6" />
+              <DropdownMenu>
+                <DropdownMenuTrigger><User className="h-6 w-6" /></DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem>Profile</DropdownMenuItem>
+                  <DropdownMenuItem>Orders</DropdownMenuItem>
+                  <DropdownMenuItem>Account Settings</DropdownMenuItem>
+                  <DropdownMenuItem>Log Out</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
             </Button>
 
             {/* Mobile Menu */}
@@ -138,7 +157,7 @@ const Header = () => {
         </div>
 
         {/* Mobile Search */}
-        <div className="md:hidden pb-4">
+        <div className=" pb-4">
           <form onSubmit={handleSearch} className="relative w-full">
             <Input
               type="text"
